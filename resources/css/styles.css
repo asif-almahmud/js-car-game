@@ -23,17 +23,23 @@ picture {
 }
 
 /* ---------------------- */
+body {
+  background-color: #d7d7d7;
+}
+
 .hide {
   display: none;
 }
 
 .gameArea {
   background-color: #363636;
-  width: 200px;
+  width: 300px;
   height: 100vh;
   margin: auto;
   overflow: hidden;
   position: relative;
+  border-left: 10px solid #9d9d9d;
+  border-right: 10px solid #9d9d9d;
 }
 
 .line {
@@ -44,21 +50,7 @@ picture {
   height: 100px;
   width: 5px;
   margin: auto;
-  background-color: rgb(225, 225, 225);
-  animation-name: move;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-@keyframes move {
-  0% {
-    top: -600px;
-  }
-
-  100% {
-    top: calc(100vh - 150px);
-  }
+  background-color: #acacaccc;
 }
 
 .car {
