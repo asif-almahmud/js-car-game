@@ -1,0 +1,73 @@
+/* -------------------- */
+/* --------reset------- */
+/* -------------------- */
+
+/* box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+/* ---------------------- */
+.hide {
+  display: none;
+}
+
+.gameArea {
+  background-color: #363636;
+  width: 200px;
+  height: 100vh;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  transform: translateX(-50%);
+  height: 100px;
+  width: 5px;
+  margin: auto;
+  background-color: rgb(225, 225, 225);
+  animation-name: move;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes move {
+  0% {
+    top: -600px;
+  }
+
+  100% {
+    top: calc(100vh - 150px);
+  }
+}
+
+.car {
+  position: absolute;
+  /* top: 0px; */
+  bottom: 100px;
+  /* margin: auto; */
+  width: 50px;
+  height: 100px;
+  background-color: blue;
+  z-index: 1;
+}
