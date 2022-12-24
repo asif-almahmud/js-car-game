@@ -3,7 +3,8 @@ function playGame() {
   const height = road.height;
   const width = road.width;
 
-  move(height);
+  moveLines(height);
+  moveEnemies(height);
 
   console.log(road);
 
@@ -31,7 +32,7 @@ function playGame() {
   }
 }
 
-function move(roadHeight) {
+function moveLines(roadHeight) {
   const lines = document.querySelectorAll(".line");
 
   console.log(lines[0].style.height);
@@ -42,6 +43,23 @@ function move(roadHeight) {
     } else {
       line.style.marginTop = parseInt(line.style.marginTop) + 4 + "px";
       console.log({ marinTop: line.style.marginTop });
+    }
+  });
+}
+
+function moveEnemies(roadHeight) {
+  const enemies = document.querySelectorAll(".enemy");
+
+  console.log(enemies[0].style.height);
+
+  enemies.forEach((enemy) => {
+    if (parseInt(enemy.style.marginTop) > roadHeight) {
+      enemy.style.marginTop = Math.floor(Math.random() * 900) * -1 + "px";
+      enemy.style.marginLeft = Math.floor(Math.random() * 10) * 100 + "px";
+    } else {
+      enemy.style.marginTop = parseInt(enemy.style.marginTop) + 3 + "px";
+      // enemy.style.marginLeft = Math.floor(Math.random() * 10) * 100 + "px";
+      console.log({ marinTop: enemy.style.marginTop });
     }
   });
 }
