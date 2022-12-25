@@ -27,6 +27,9 @@ function playGame() {
     car.style.left = player.x + "px";
     car.style.top = player.y + "px";
 
+    player.score++;
+    score.innerText = Math.round(player.score / 20);
+
     requestAnimationFrame(playGame);
   }
 }

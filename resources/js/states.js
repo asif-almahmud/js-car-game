@@ -5,4 +5,4 @@ let keys = {
   ArrowLeft: false,
 };
 
-let player = { start: false, y: 0, x: 0, speed: 5 };
+let player = { start: false, score: 0, y: 0, x: 0, speed: 5 };
