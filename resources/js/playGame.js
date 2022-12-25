@@ -8,7 +8,6 @@ function playGame() {
 
   console.log(road);
 
-  console.log("from play game");
   let car = document.querySelector(".car");
 
   if (player.start) {
@@ -38,28 +37,33 @@ function moveLines(roadHeight) {
   console.log(lines[0].style.height);
 
   lines.forEach((line) => {
-    if (parseInt(line.style.marginTop) > roadHeight) {
-      line.style.marginTop = -100 + "px";
+    if (parseInt(line.style.top) > roadHeight) {
+      line.style.top = -100 + "px";
     } else {
-      line.style.marginTop = parseInt(line.style.marginTop) + 4 + "px";
-      console.log({ marinTop: line.style.marginTop });
+      line.style.top = parseInt(line.style.top) + 4 + "px";
+      console.log({ marinTop: line.style.top });
     }
   });
 }
 
 function moveEnemies(roadHeight) {
   const enemies = document.querySelectorAll(".enemy");
+  const car = document.querySelector(".car");
 
   console.log(enemies[0].style.height);
 
   enemies.forEach((enemy) => {
-    if (parseInt(enemy.style.marginTop) > roadHeight) {
-      enemy.style.marginTop = Math.floor(Math.random() * 900) * -1 + "px";
-      enemy.style.marginLeft = Math.floor(Math.random() * 10) * 100 + "px";
+    if (isCollided(car, enemy)) {
+      console.log("HIT");
+      player.start = false;
+    }
+    if (parseInt(enemy.style.top) > roadHeight) {
+      enemy.style.top = Math.floor(Math.random() * 900) * -1 + "px";
+      enemy.style.left = Math.floor(Math.random() * 10) * 100 + "px";
     } else {
-      enemy.style.marginTop = parseInt(enemy.style.marginTop) + 3 + "px";
-      // enemy.style.marginLeft = Math.floor(Math.random() * 10) * 100 + "px";
-      console.log({ marinTop: enemy.style.marginTop });
+      enemy.style.top = parseInt(enemy.style.top) + 3 + "px";
+      // enemy.style.left = Math.floor(Math.random() * 10) * 100 + "px";
+      console.log({ marinTop: enemy.style.top });
     }
   });
 }

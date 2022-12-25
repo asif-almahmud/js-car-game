@@ -62,7 +62,6 @@ body {
   height: 100px;
   background-color: rgb(90, 62, 252);
   z-index: 1;
-  border-radius: 10px;
 }
 
 .enemy {
@@ -71,6 +70,5 @@ body {
   width: 50px;
   height: 100px;
   z-index: 1;
-  border-radius: 10px;
   background-color: rgb(240, 90, 90);
 }
