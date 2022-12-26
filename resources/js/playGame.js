@@ -65,7 +65,7 @@ function moveEnemies(roadHeight) {
     }
     if (parseInt(enemy.style.top) > roadHeight) {
       enemy.style.top = Math.floor(Math.random() * 900) * -1 + "px";
-      enemy.style.left = Math.floor(Math.random() * 10) * 100 + "px";
+      enemy.style.left = Math.floor(Math.random() * 10) * 80 + "px";
     } else {
       enemy.style.top = parseInt(enemy.style.top) + 6 + "px";
       // enemy.style.left = Math.floor(Math.random() * 10) * 100 + "px";

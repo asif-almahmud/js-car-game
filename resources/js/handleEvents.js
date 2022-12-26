@@ -1,6 +1,9 @@
 function createGame() {
-  start.classList.add("hide");
+  // start.classList.add("hide");
+  start.style.display = "none";
   gameArea.classList.remove("hide");
+  gameArea.innerHTML = "";
+  player.score = 0;
   console.log("clicked");
   player.start = true;
 

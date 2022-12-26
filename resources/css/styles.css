@@ -49,8 +49,9 @@ body {
   display: none;
   justify-content: center;
   align-items: center;
-  color: #ebebeb;
+  color: #f4faee;
   font-size: 18px;
+  font-weight: 800;
   position: absolute;
   left: 50%;
   bottom: 5px;
