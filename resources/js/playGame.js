@@ -20,7 +20,7 @@ function playGame() {
     if (keys.ArrowLeft && player.x > 0) {
       player.x -= player.speed;
     }
-    if (keys.ArrowRight && player.x < width - 70) {
+    if (keys.ArrowRight && player.x < width - 60) {
       player.x += player.speed;
     }
 
@@ -28,7 +28,8 @@ function playGame() {
     car.style.top = player.y + "px";
 
     player.score++;
-    score.innerText = Math.round(player.score / 20);
+    score.style.display = "flex";
+    score.innerText = `Score: ${Math.round(player.score / 20)}`;
 
     requestAnimationFrame(playGame);
   }
@@ -59,12 +60,14 @@ function moveEnemies(roadHeight) {
     if (isCollided(car, enemy)) {
       console.log("HIT");
       player.start = false;
+      start.style.display = "flex";
+      start.innerText = "Play Again";
     }
     if (parseInt(enemy.style.top) > roadHeight) {
       enemy.style.top = Math.floor(Math.random() * 900) * -1 + "px";
       enemy.style.left = Math.floor(Math.random() * 10) * 100 + "px";
     } else {
-      enemy.style.top = parseInt(enemy.style.top) + 3 + "px";
+      enemy.style.top = parseInt(enemy.style.top) + 6 + "px";
       // enemy.style.left = Math.floor(Math.random() * 10) * 100 + "px";
       console.log({ marinTop: enemy.style.top });
     }

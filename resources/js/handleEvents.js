@@ -1,5 +1,5 @@
-function start() {
-  startScreen.classList.add("hide");
+function createGame() {
+  start.classList.add("hide");
   gameArea.classList.remove("hide");
   console.log("clicked");
   player.start = true;
@@ -13,7 +13,7 @@ function start() {
   console.log(player);
 
   // create enemy cars
-  for (let x = 0; x < 10; x++) {
+  for (let x = 0; x < 15; x++) {
     let enemy = document.createElement("div");
     enemy.classList.add("enemy");
     enemy.style.top = Math.floor(Math.random() * 900) * -1 + "px";

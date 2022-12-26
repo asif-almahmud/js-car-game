@@ -1,7 +1,7 @@
 const score = document.querySelector(".score");
-const startScreen = document.querySelector(".startScreen");
+const start = document.querySelector(".start");
 const gameArea = document.querySelector(".gameArea");
 
-startScreen.addEventListener("click", start);
+start.addEventListener("click", createGame);
 document.addEventListener("keydown", pressOn);
 document.addEventListener("keyup", pressOff);
