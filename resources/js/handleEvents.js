@@ -41,12 +41,14 @@ function createGame() {
 
 function pressOn(e) {
   e.preventDefault();
-  keys[e.key] = true;
-  console.log(keys);
+  if ((player.start === false && e.key === "Enter") || e.key === " ") {
+    createGame();
+  } else {
+    keys[e.key] = true;
+  }
 }
 
 function pressOff(e) {
   e.preventDefault();
   keys[e.key] = false;
-  console.log(keys);
 }
